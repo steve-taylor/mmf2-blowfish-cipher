@@ -11,7 +11,7 @@ void uint32_to_hex(const uint32_t in, char *out)
 {
 	for (int i = 0; i < 8; ++i)
 	{
-		int16_t nybble = (in >> (i * 4)) & 0xF;
+		int16_t nybble = (in >> ((7 - i) * 4)) & 0xF;
 		out[i] = (char)(nybble + (nybble < 10 ? '0' : ('a' - 10)));
 	}
 	out[8] = 0;
@@ -29,7 +29,7 @@ void hex_to_uint32(const char *in, uint32_t *out)
 			: 'a' <= c && c <= 'f' ? nybble = 10 + c - 'a'
 			: 'A' <= c && c <= 'F' ? nybble = 10 + c - 'A'
 			: 0;
-		*out |= (nybble << (i * 4));
+		*out |= (nybble << ((7 - i) * 4));
 	}
 }
 
@@ -88,6 +88,11 @@ Blowfish::Blowfish(const std::string& key) : key(key)
 	}
 }
 
+__inline void flip_endian32(uint32_t *n)
+{
+	*n = (*n >> 24) | ((*n >> 8) & 0xff00) | ((*n & 0xff00) << 8) | ((*n & 0xff) << 24);
+}
+
 std::string Blowfish::encrypt(std::string plainText)
 {
 	const size_t inputStringLength = plainText.length();
@@ -98,6 +103,11 @@ std::string Blowfish::encrypt(std::string plainText)
 
 	// Copy the text to be encrypted into the blocks.
 	memcpy_s((char*)halfblocks.data(), plainText.length(), plainText.c_str(), plainText.length());
+
+	// Flip endianness.
+	for (size_t i = 0; i < halfBlocksCount; ++i) {
+		flip_endian32(&halfblocks[i]);
+	}
 
 	std::string outputHexstring(((plainText.length() + 7) >> 3 << 4), '\0');
 
@@ -137,6 +147,9 @@ std::string Blowfish::decrypt(std::string encryptedText)
 		hex_to_uint32(&encryptedText[8 * (i + 1)], r);
 
 		blowfish_decrypt(l, r);
+
+		flip_endian32(l);
+		flip_endian32(r);
 	}
 
 	result.resize(result.find_first_of('\0'));
