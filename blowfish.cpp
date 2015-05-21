@@ -11,13 +11,13 @@ void uint32_to_hex(const uint32_t in, char *out)
 {
 	for (int i = 0; i < 8; ++i)
 	{
-		int16_t nybble = (in >> ((7 - i) * 4)) & 0xF;
+		int16_t nybble = (in >> (i * 4)) & 0xF;
 		out[i] = (char)(nybble + (nybble < 10 ? '0' : ('a' - 10)));
 	}
 	out[8] = 0;
 }
 
-/** Convert an 8-character hexadecimal string into an unsigned 32-bit integer. Ensure in is preallocated with 8 characters. */
+/** Convert an 8-character hexadecimal string into an unsigned 32-bit integer. Ensure it is preallocated with 8 characters. */
 void hex_to_uint32(const char *in, uint32_t *out)
 {
 	*out = 0;
@@ -29,7 +29,7 @@ void hex_to_uint32(const char *in, uint32_t *out)
 			: 'a' <= c && c <= 'f' ? nybble = 10 + c - 'a'
 			: 'A' <= c && c <= 'F' ? nybble = 10 + c - 'A'
 			: 0;
-		*out |= (nybble << ((7 - i) * 4));
+		*out |= (nybble << (i * 4));
 	}
 }
 

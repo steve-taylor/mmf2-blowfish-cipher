@@ -13,7 +13,7 @@ int main(int argc, char* argv[])
 	string encryptedString = blowfish.encrypt("Foobar123");
 	cout << "\"Foobar123\" encrypted with \"KEY\": " << encryptedString << endl;
 
-	if (encryptedString == "8734c52bc2d06c6d49daf3117805d88f")
+	if (encryptedString == "b25c4378d6c60d2c113fad94f88d5087")
 	{
 		cout << "Encryption test passed." << endl;
 	}
