@@ -151,8 +151,12 @@ std::string Blowfish::decrypt(std::string encryptedText)
 		flip_endian32(l);
 		flip_endian32(r);
 	}
-
-	result.resize(result.find_first_of('\0'));
+	
+	size_t size = result.find('\0');
+	if (size != string::npos)
+	{
+		result.resize(result.find_first_of('\0'));
+	}
 
 	return result;
 }
