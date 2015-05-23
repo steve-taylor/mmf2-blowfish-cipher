@@ -46,13 +46,13 @@ int WINAPI DLLExport MakeIconEx ( mv _far *mV, cSurface* pIconSf, LPTSTR lpName,
 {
 #ifndef RUN_ONLY
 
-    pIconSf->Delete();
-    pIconSf->Clone(*SDK->Icon);
+	pIconSf->Delete();
+	pIconSf->Clone(*SDK->Icon);
 
-    pIconSf->SetTransparentColor(RGB(255, 0, 255));
+	pIconSf->SetTransparentColor(RGB(255, 0, 255));
 
 #endif // !defined(RUN_ONLY)
-   return 0;
+	return 0;
 }
 
 
@@ -69,8 +69,8 @@ int WINAPI DLLExport CreateObject(mv _far *mV, fpLevObj loPtr, LPEDATA edPtr)
 	// Check compatibility
 	if ( IS_COMPATIBLE(mV) )
 	{
-        Edif::Init(mV, edPtr);
-        return 0;
+		Edif::Init(mV, edPtr);
+		return 0;
 	}
 #endif // !defined(RUN_ONLY)
 
@@ -106,9 +106,9 @@ void WINAPI	DLLExport RemoveObject(mv _far *mV, fpLevObj loPtr, LPEDATA edPtr, u
 {
 #ifndef RUN_ONLY
 	// Is the last object removed?
-    if (0 == cpt)
+	if (0 == cpt)
 	{
-        Edif::Free(edPtr);
+		Edif::Free(edPtr);
 	}
 #endif // !defined(RUN_ONLY)
 }
@@ -136,6 +136,7 @@ void WINAPI DLLExport GetObjectRect(mv _far *mV, RECT FAR *rc, fpLevObj loPtr, L
 	return;
 }
 
+
 // --------------------
 // EditorDisplay
 // --------------------
@@ -145,12 +146,17 @@ void WINAPI DLLExport GetObjectRect(mv _far *mV, RECT FAR *rc, fpLevObj loPtr, L
 void WINAPI DLLExport EditorDisplay(mv _far *mV, fpObjInfo oiPtr, fpLevObj loPtr, LPEDATA edPtr, RECT FAR *rc)
 {
 #ifndef RUN_ONLY
+
 	LPSURFACE Surface = WinGetSurface((int) mV->mvIdEditWin);
-	if(!Surface) {
-		SDK->Icon->Blit(*Surface, rc->left, rc->top, BMODE_TRANSP, BOP_COPY, 0);
-	}
+
+	if(!Surface)
+		return;
+
+	SDK->Icon->Blit(*Surface, rc->left, rc->top, BMODE_TRANSP, BOP_COPY, 0);
+
 #endif // !defined(RUN_ONLY)
 }
+
 
 // --------------------
 // IsTransparent
@@ -214,6 +220,10 @@ void WINAPI	DLLExport CreateFromFile (LPMV mV, LPTSTR fileName, LPEDATA edPtr)
 //
 BOOL WINAPI DLLExport GetProperties(LPMV mV, LPEDATA edPtr, BOOL bMasterItem)
 {
+#ifndef RUN_ONLY
+	mvInsertProps(mV, edPtr, Properties, PROPID_TAB_GENERAL, TRUE);
+#endif // !defined(RUN_ONLY)
+
 	// OK
 	return TRUE;
 }

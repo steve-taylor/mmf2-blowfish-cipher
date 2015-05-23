@@ -1,55 +1,44 @@
 {
-    "About": {
-        "Name": "BlowfishCipher object",
-        "Author": "Steve Taylor",
-        "Copyright": "Copyright (C) 2015 Steve Taylor",
-        "Comment": "Encrypts strings using Blowfish into hexadecimal strings and back again",
-        "URL": "https://atulos.com",
-        "Help": "Help/BlowfishCipher.chm",
-        "Identifier": "BFC1"
-    },
-    "ActionMenu": [],
-    "ConditionMenu": [],
-    "ExpressionMenu": [
-        [
-            0,
-            "Encrypt a string"
-        ],
-        [
-            1,
-            "Decrypt a hex string"
-        ]
-    ],
-    "Actions": [],
-    "Conditions": [],
-    "Expressions": [
-        {
-            "Title": "BFEncrypt$(",
-            "Returns": "Text",
-            "Parameters": [
-                [
-                    "Text",
-                    "Key"
-                ],
-                [
-                    "Text",
-                    "String to encrypt"
-                ]
-            ]
-        },
-        {
-            "Title": "BFDecrypt$(",
-            "Returns": "Text",
-            "Parameters": [
-                [
-                    "Text",
-                    "Key"
-                ],
-                [
-                    "Text",
-                    "Hexadecimal string-encoded binary array to decrypt"
-                ]
-            ]
-        }
-    ]
+	"About":
+	{
+		"Name": "BlowfishCipher object",
+		"Author": "Steve Taylor",
+		"Copyright": "Copyright (C) 2015 Steve Taylor",
+		"Comment": "Encrypts strings using Blowfish into hexadecimal strings and back again",
+		"URL": "https://atulos.com",
+		"Help": "Help/BlowfishCipher.chm",
+		"Identifier": "BFC1"
+	},
+
+	"ActionMenu": [],
+	"ConditionMenu": [],
+	"ExpressionMenu":
+	[
+		[0, "Encrypt a string"],
+		[1, "Decrypt a hex string"]
+	],
+
+	"Actions": [],
+	"Conditions": [],
+	"Expressions":
+	[
+		{
+			"Title": "BFEncrypt$(",
+			"Returns": "Text",
+			"Parameters":
+			[
+				["Text", "Key"],
+				["Text", "String to encrypt"]
+			]
+		},
+		{
+			"Title": "BFDecrypt$(",
+			"Returns": "Text",
+			"Parameters":
+			[
+				["Text", "Key"],
+				["Text", "Hexadecimal string-encoded binary array to decrypt"]
+			]
+		}
+	]
 }

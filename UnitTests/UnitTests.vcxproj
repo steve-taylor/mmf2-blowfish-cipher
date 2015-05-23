@@ -84,7 +84,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\blowfish.cpp" />
+    <ClCompile Include="..\Blowfish.cpp" />
     <ClCompile Include="UnitTests.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

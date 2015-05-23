@@ -16,11 +16,13 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United States) resources
+// English (U.S.) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
+#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -48,7 +50,7 @@ BEGIN
             VALUE "FileDescription", "Blowfish Cipher for MMF2"
             VALUE "FileVersion", "1.00"
             VALUE "InternalName", "BlowfishCipher"
-            VALUE "LegalCopyright", "Copyright © 2014 Steve Taylor"
+            VALUE "LegalCopyright", "Copyright ï¿½ 2015 Steve Taylor"
             VALUE "OriginalFilename", "BlowfishCipher.mfx"
             VALUE "ProductVersion", "1, 0, 0, 1"
             VALUE "SpecialBuild", "00000001"
@@ -66,7 +68,7 @@ END
 // RCDATA
 //
 
-KPX_MAGICNUMBER RCDATA 
+KPX_MAGICNUMBER RCDATA
 BEGIN
     0x2516, 0x5908
 END
@@ -78,12 +80,12 @@ END
 // TEXTINCLUDE
 //
 
-1 TEXTINCLUDE 
+1 TEXTINCLUDE
 BEGIN
     "resource.h\0"
 END
 
-2 TEXTINCLUDE 
+2 TEXTINCLUDE
 BEGIN
     "#include ""..\\..\\Inc\\ccx.h""\r\n"
     "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
@@ -92,7 +94,7 @@ BEGIN
     "\0"
 END
 
-3 TEXTINCLUDE 
+3 TEXTINCLUDE
 BEGIN
     "\r\n"
     "\0"
@@ -111,16 +113,18 @@ BEGIN
     KPX_MARK                "MF2"
 END
 
-#endif    // English (United States) resources
+#endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// English (United Kingdom) resources
+// English (U.K.) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENG)
+#ifdef _WIN32
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_UK
 #pragma code_page(1252)
+#endif //_WIN32
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -135,7 +139,7 @@ IDR_EDIF_ICON           EDIF                    "Icon.png"
 #endif
 #endif
 IDR_EDIF_JSON           EDIF                    "Ext.json"
-#endif    // English (United Kingdom) resources
+#endif    // English (U.K.) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -149,4 +153,3 @@ IDR_EDIF_JSON           EDIF                    "Ext.json"
 
 /////////////////////////////////////////////////////////////////////////////
 #endif    // not APSTUDIO_INVOKED
-

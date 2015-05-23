@@ -1,10 +1,12 @@
 #include "Common.h"
 
 Extension::Extension(LPRDATA _rdPtr, LPEDATA edPtr, fpcob cobPtr)
-    : rdPtr(_rdPtr), rhPtr(_rdPtr->rHo.hoAdRunHeader), Runtime(_rdPtr)
+: rdPtr(_rdPtr)
+, rhPtr(_rdPtr->rHo.hoAdRunHeader)
+, Runtime(_rdPtr)
 {
-    LinkExpression(0, BFEncrypt);
-    LinkExpression(1, BFDecrypt);
+	LinkExpression(0, BFEncrypt);
+	LinkExpression(1, BFDecrypt);
 }
 
 Extension::~Extension()
@@ -19,42 +21,39 @@ short Extension::Handle()
 
 short Extension::Display()
 {
-    // Ok
-    return 0;
+	return 0;
 }
 
 short Extension::Pause()
 {
-    // Ok
-    return 0;
+	return 0;
 }
 
 short Extension::Continue()
 {
-    // Ok
-    return 0;
+	return 0;
 }
 
 bool Extension::Save(HANDLE File)
 {
-	return false;
+	return true;
 }
 
 bool Extension::Load(HANDLE File)
 {
-	return false;
+	return true;
 }
 
-void Extension::Action(int ID, LPRDATA rdPtr, long param1, long param2)
+void Extension::Action(int ID, RD *rd, long param1, long param2)
 {
 }
 
-long Extension::Condition(int ID, LPRDATA rdPtr, long param1, long param2)
+long Extension::Condition(int ID, RD *rd, long param1, long param2)
 {
-    return false;
+	return false; //hopefully StringComparison (PARAM_CMPSTRING) is not used, or this may crash
 }
 
-long Extension::Expression(int ID, LPRDATA rdPtr, long param)
+long Extension::Expression(int ID, RD *rd, long param)
 {
-    return 0;
+	return long(_T("")); //so that unlinked expressions that return strings won't crash
 }

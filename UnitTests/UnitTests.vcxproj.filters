@@ -26,7 +26,7 @@
     <ClCompile Include="UnitTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\blowfish.cpp">
+    <ClCompile Include="..\Blowfish.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
