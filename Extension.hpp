@@ -34,7 +34,7 @@ public:
 	bool Save(HANDLE File);
 	bool Load(HANDLE File);
 
-	void Action(int ID, RD *rd, long param1, long param2);
-	long Condition(int ID, RD *rd, long param1, long param2);
-	long Expression(int ID, RD *rd, long param);
+	void Action(int ID, RUNDATA *rd, long param1, long param2);
+	long Condition(int ID, RUNDATA *rd, long param1, long param2);
+	long Expression(int ID, RUNDATA *rd, long param);
 };

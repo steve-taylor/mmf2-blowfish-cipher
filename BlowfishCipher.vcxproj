@@ -236,7 +236,7 @@
       <ResourceOutputFileName>$(IntDir)Ext.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.5.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2u.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\Ext.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -286,7 +286,7 @@
       <ResourceOutputFileName>$(IntDir)Ext.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.5.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2u.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <ModuleDefinitionFile>.\Ext.def</ModuleDefinitionFile>
@@ -303,8 +303,8 @@
     </Bscmake>
     <PostBuildEvent />
     <PostBuildEvent>
-      <Command>if not exist $(ProjectDir)MFX\Extensions mkdir $(ProjectDir)MFX\Extensions
-copy $(TargetPath) $(ProjectDir)MFX\Extensions\$(TargetFileName)</Command>
+      <Command>if not exist "$(ProjectDir)MFX\Extensions" mkdir "$(ProjectDir)MFX\Extensions"
+copy "$(TargetPath)" "$(ProjectDir)MFX\Extensions\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Runtime Unicode|Win32'">
@@ -340,7 +340,7 @@ copy $(TargetPath) $(ProjectDir)MFX\Extensions\$(TargetFileName)</Command>
       <ResourceOutputFileName>$(IntDir)Ext.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.5.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <ModuleDefinitionFile>.\Ext.def</ModuleDefinitionFile>
@@ -357,8 +357,8 @@ copy $(TargetPath) $(ProjectDir)MFX\Extensions\$(TargetFileName)</Command>
     </Bscmake>
     <PostBuildEvent />
     <PostBuildEvent>
-      <Command>if not exist $(ProjectDir)MFX\Data\Runtime mkdir $(ProjectDir)MFX\Data\Runtime
-copy $(TargetPath) $(ProjectDir)MFX\Data\Runtime\$(TargetFileName)</Command>
+      <Command>if not exist "$(ProjectDir)MFX\Data\Runtime" mkdir "$(ProjectDir)MFX\Data\Runtime"
+copy "$(TargetPath)" "$(ProjectDir)MFX\Data\Runtime\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug HWA|Win32'">
@@ -391,7 +391,7 @@ copy $(TargetPath) $(ProjectDir)MFX\Data\Runtime\$(TargetFileName)</Command>
       <ResourceOutputFileName>$(IntDir)Ext.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.0hwa.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2hwa.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\Ext.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -441,7 +441,7 @@ copy $(TargetPath) $(ProjectDir)MFX\Data\Runtime\$(TargetFileName)</Command>
       <ResourceOutputFileName>$(IntDir)Ext.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.0hwa.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2hwa.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <ModuleDefinitionFile>.\Ext.def</ModuleDefinitionFile>
@@ -458,8 +458,8 @@ copy $(TargetPath) $(ProjectDir)MFX\Data\Runtime\$(TargetFileName)</Command>
     </Bscmake>
     <PostBuildEvent />
     <PostBuildEvent>
-      <Command>if not exist $(ProjectDir)MFX\Extensions mkdir $(ProjectDir)MFX\Extensions
-copy $(TargetPath) $(ProjectDir)MFX\Extensions\$(TargetFileName)</Command>
+      <Command>if not exist "$(ProjectDir)MFX\Extensions" mkdir "$(ProjectDir)MFX\Extensions"
+copy "$(TargetPath)" "$(ProjectDir)MFX\Extensions\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Runtime HWA|Win32'">
@@ -495,7 +495,7 @@ copy $(TargetPath) $(ProjectDir)MFX\Extensions\$(TargetFileName)</Command>
       <ResourceOutputFileName>$(IntDir)Ext.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.0hwa.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2hwa.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <ModuleDefinitionFile>.\Ext.def</ModuleDefinitionFile>
@@ -512,8 +512,8 @@ copy $(TargetPath) $(ProjectDir)MFX\Extensions\$(TargetFileName)</Command>
     </Bscmake>
     <PostBuildEvent />
     <PostBuildEvent>
-      <Command>if not exist $(ProjectDir)MFX\Data\Runtime mkdir $(ProjectDir)MFX\Data\Runtime
-copy $(TargetPath) $(ProjectDir)MFX\Data\Runtime\$(TargetFileName)</Command>
+      <Command>if not exist "$(ProjectDir)MFX\Data\Runtime" mkdir "$(ProjectDir)MFX\Data\Runtime"
+copy "$(TargetPath)" "$(ProjectDir)MFX\Data\Runtime\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -546,7 +546,7 @@ copy $(TargetPath) $(ProjectDir)MFX\Data\Runtime\$(TargetFileName)</Command>
       <ResourceOutputFileName>$(IntDir)Ext.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <ModuleDefinitionFile>.\Ext.def</ModuleDefinitionFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -596,7 +596,7 @@ copy $(TargetPath) $(ProjectDir)MFX\Data\Runtime\$(TargetFileName)</Command>
       <ResourceOutputFileName>$(IntDir)Ext.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <ModuleDefinitionFile>.\Ext.def</ModuleDefinitionFile>
@@ -613,8 +613,8 @@ copy $(TargetPath) $(ProjectDir)MFX\Data\Runtime\$(TargetFileName)</Command>
     </Bscmake>
     <PostBuildEvent />
     <PostBuildEvent>
-      <Command>if not exist $(ProjectDir)MFX\Extensions mkdir $(ProjectDir)MFX\Extensions
-copy $(TargetPath) $(ProjectDir)MFX\Extensions\$(TargetFileName)</Command>
+      <Command>if not exist "$(ProjectDir)MFX\Extensions" mkdir "$(ProjectDir)MFX\Extensions"
+copy "$(TargetPath)" "$(ProjectDir)MFX\Extensions\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Runtime|Win32'">
@@ -650,7 +650,7 @@ copy $(TargetPath) $(ProjectDir)MFX\Extensions\$(TargetFileName)</Command>
       <ResourceOutputFileName>$(IntDir)Ext.res</ResourceOutputFileName>
     </ResourceCompile>
     <Link>
-      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.0.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;..\..\lib\mmfs2.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
       <ModuleDefinitionFile>.\Ext.def</ModuleDefinitionFile>
@@ -667,8 +667,8 @@ copy $(TargetPath) $(ProjectDir)MFX\Extensions\$(TargetFileName)</Command>
     </Bscmake>
     <PostBuildEvent />
     <PostBuildEvent>
-      <Command>if not exist $(ProjectDir)MFX\Data\Runtime mkdir $(ProjectDir)MFX\Data\Runtime
-copy $(TargetPath) $(ProjectDir)MFX\Data\Runtime\$(TargetFileName)</Command>
+      <Command>if not exist "$(ProjectDir)MFX\Data\Runtime" mkdir "$(ProjectDir)MFX\Data\Runtime"
+copy "$(TargetPath)" "$(ProjectDir)MFX\Data\Runtime\$(TargetFileName)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

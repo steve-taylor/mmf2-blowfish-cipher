@@ -44,16 +44,16 @@ bool Extension::Load(HANDLE File)
 	return true;
 }
 
-void Extension::Action(int ID, RD *rd, long param1, long param2)
+void Extension::Action(int ID, RUNDATA *rd, long param1, long param2)
 {
 }
 
-long Extension::Condition(int ID, RD *rd, long param1, long param2)
+long Extension::Condition(int ID, RUNDATA *rd, long param1, long param2)
 {
 	return false; //hopefully StringComparison (PARAM_CMPSTRING) is not used, or this may crash
 }
 
-long Extension::Expression(int ID, RD *rd, long param)
+long Extension::Expression(int ID, RUNDATA *rd, long param)
 {
 	return long(_T("")); //so that unlinked expressions that return strings won't crash
 }
